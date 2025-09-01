@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from cforma import StructFormatter
+from src.cforma import StructFormatter
 
 
 # 1. Define your Pydantic model
@@ -14,6 +14,7 @@ llm_schema = StructFormatter.ingest(
     schemaDescription="A schema for a user profile.",
     schemaObject=UserProfile,
 )
+
 
 # 3. Use `llm_schema` in your API call
 # response = client.chat.completions.create(..., extra_body={"response_format": llm_schema})

@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: cforma
-Version: 0.1.1
+Version: 0.1.2
 Summary: A utility to format Pydantic models into clean JSON Schemas for LLMs.
 Author-email: Grace Peter Mutiibwa <temporarybag.grace@gmail.com>
 License: Copyright 2025 GRACE PETER MUTIIBWA

@@ -47,6 +47,18 @@ class StructFormatter:
 
     @staticmethod
     def ingest(schemaName: str, schemaDescription: str, schemaObject: Type[BaseModel]):
+        # ensure that the objects are not none
+        assert isinstance(schemaName, str), f"The `SchemaName` has to be a string"
+        assert isinstance(
+            schemaDescription, str
+        ), f"The `schemaDescription` has to be a string"
+        assert (
+            not schemaObject is None
+        ), f"The `schemaObject` should be a valid pydantic model and not None"
+        assert issubclass(
+            schemaObject, BaseModel
+        ), f"The `schemaObject` should be a valid pydantic model"
+
         # format
         derived, required = StructIngest().format(pydanticObject=schemaObject)
 
